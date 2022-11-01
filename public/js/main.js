@@ -24,7 +24,7 @@ async function getChannel(channelID) {
       })
       const data = await response.json()
       console.log(data.data)
-      let sourceUrl = "https://s13.tntendirect.com/m6/live/playlist.m3u8"
+      let sourceUrl = data.data[3].url
       if (Hls.isSupported()) {
          var video = document.getElementById('video');
          var hls = new Hls();
